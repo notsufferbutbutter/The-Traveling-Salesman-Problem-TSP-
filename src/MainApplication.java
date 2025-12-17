@@ -64,6 +64,15 @@ public class MainApplication extends JFrame {
 
         JButton startButton = new JButton("Start Optimierung");
         stylePrimaryButton(startButton);
+        startButton.addActionListener(e -> {
+            int ants = Integer.parseInt(antCountField.getText());
+            double alpha = Double.parseDouble(alphaField.getText());
+            double beta = Double.parseDouble(betaField.getText());
+            double rho = Double.parseDouble(rhoField.getText());
+
+            controller.startOptimization(ants, alpha, beta, rho);
+        });
+
 
         JButton stopButton = new JButton("Stopp und Ergebnis");
         styleSecondaryButton(stopButton);
